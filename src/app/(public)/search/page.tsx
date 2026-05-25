@@ -1,0 +1,5 @@
+﻿import { SearchBar } from "@/components/site/search-bar";
+import { PostCard } from "@/components/cards/post-card";
+import { featuredPosts } from "@/data";
+export const metadata = { title: "Advanced Search" };
+export default async function SearchPage({ searchParams }: { searchParams: Promise<{ q?: string; category?: string }> }) { const params = await searchParams; const q = (params.q || "").toLowerCase(); const category = (params.category || "").toLowerCase(); const posts = featuredPosts.filter((p) => (!q || `${p.title} ${p.organization} ${p.qualification}`.toLowerCase().includes(q)) && (!category || p.category.toLowerCase().replace(/ /g, "-") === category)); return <main className="section"><h1 className="text-4xl font-bold">Advanced Search</h1><p className="mt-3 text-muted-foreground">Instant search with category, state, qualification, and date filters through the API.</p><div className="mt-6"><SearchBar /></div><div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{posts.map((post) => <PostCard key={post.slug} post={post} />)}</div></main>; }

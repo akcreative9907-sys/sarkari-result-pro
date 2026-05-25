@@ -1,0 +1,7 @@
+﻿import Link from "next/link";
+import { CalendarDays, MapPin, Users } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatDate } from "@/lib/utils";
+type PostCardProps = { post: { title: string; slug: string; type: string; organization: string; category: string; state?: string | null; qualification?: string | null; vacancyCount?: number; closingDate?: string | Date | null; summary: string; badge?: string } };
+export function PostCard({ post }: PostCardProps) { return <Link href={`/post/${post.slug}`}><Card className="glass h-full transition hover:-translate-y-1 hover:shadow-glow"><CardHeader><div className="flex flex-wrap gap-2"><Badge>{post.type.replace("_", " ")}</Badge><Badge className="border-primary/30 bg-primary/10 text-primary">{post.badge || post.category}</Badge></div><CardTitle className="leading-6">{post.title}</CardTitle></CardHeader><CardContent className="space-y-4 text-sm text-muted-foreground"><p className="line-clamp-3 leading-6">{post.summary}</p><div className="grid gap-2"><span className="flex items-center gap-2"><MapPin className="h-4 w-4" />{post.state || "All India"}</span><span className="flex items-center gap-2"><Users className="h-4 w-4" />{post.vacancyCount || 0} posts</span><span className="flex items-center gap-2"><CalendarDays className="h-4 w-4" />Closes {formatDate(post.closingDate)}</span></div></CardContent></Card></Link>; }

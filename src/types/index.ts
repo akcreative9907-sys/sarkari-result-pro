@@ -1,0 +1,2 @@
+﻿export type PostKind = "JOB" | "RESULT" | "ADMIT_CARD" | "ANSWER_KEY" | "ADMISSION" | "SYLLABUS";
+export type NormalizedNotice = { type: PostKind; title: string; organization: string; category: string; state?: string; qualification?: string; summary: string; content: string; officialUrl: string; sourceUrl: string; applyUrl?: string; resultUrl?: string; admitCardUrl?: string; answerKeyUrl?: string; vacancyCount?: number; closingDate?: Date; importantDates: Record<string, string>; fees: Record<string, string>; ageLimit: Record<string, string>; };

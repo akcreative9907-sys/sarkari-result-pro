@@ -1,0 +1,1 @@
+﻿export function AdZone({ label = "Sponsored" }: { label?: string }) { return <aside className="glass flex min-h-24 items-center justify-center rounded-lg p-4 text-center text-xs uppercase tracking-wider text-muted-foreground" data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}>{label} Ad Zone</aside>; }

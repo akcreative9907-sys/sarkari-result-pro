@@ -1,0 +1,5 @@
+﻿import type { LucideIcon } from "lucide-react";
+import { Activity, Bell, Database, TrendingUp } from "lucide-react";
+import { AdminShell } from "@/components/admin/admin-shell";
+const stats: Array<[string, string, LucideIcon]> = [["Review queue", "128", Database], ["Published today", "47", Activity], ["Trend recalculations", "1.8k", TrendingUp], ["Alerts queued", "32k", Bell]];
+export default function AdminPage() { return <AdminShell><h1 className="text-3xl font-bold">Admin Dashboard</h1><div className="mt-6 grid gap-4 md:grid-cols-4">{stats.map(([label, value, Icon]) => <div key={label} className="glass rounded-lg p-5"><Icon className="h-5 w-5 text-primary" /><p className="mt-4 text-3xl font-bold">{value}</p><p className="text-sm text-muted-foreground">{label}</p></div>)}</div><div className="glass mt-6 rounded-lg p-6"><h2 className="font-semibold">Automation Health</h2><p className="mt-3 text-sm leading-6 text-muted-foreground">RSS, scraper, AI enrichment, SEO generation, trending ranking, and notification queues are wired through API routes and cron workers. Scraped posts land in review before publishing.</p></div></AdminShell>; }

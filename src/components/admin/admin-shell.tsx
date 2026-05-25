@@ -1,0 +1,3 @@
+﻿import Link from "next/link";
+const links = [["Overview","/admin"],["Posts","/admin/posts"],["Analytics","/admin/analytics"],["SEO","/admin/seo"],["Notifications","/admin/notifications"]];
+export function AdminShell({ children }: { children: React.ReactNode }) { return <div className="container grid gap-6 py-8 lg:grid-cols-[220px_1fr]"><aside className="glass rounded-lg p-3"><p className="px-3 py-2 text-sm font-semibold">Admin Studio</p>{links.map(([label, href]) => <Link key={href} href={href} className="block rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{label}</Link>)}</aside><main>{children}</main></div>; }

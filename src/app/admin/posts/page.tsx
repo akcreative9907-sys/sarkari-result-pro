@@ -1,0 +1,3 @@
+﻿import { AdminShell } from "@/components/admin/admin-shell";
+import { featuredPosts } from "@/data";
+export default function AdminPostsPage() { return <AdminShell><h1 className="text-3xl font-bold">Approve Scraped Posts</h1><div className="mt-6 overflow-hidden rounded-lg border">{featuredPosts.map((p) => <div key={p.slug} className="grid gap-3 border-b bg-card p-4 md:grid-cols-[1fr_120px_120px]"><div><p className="font-semibold">{p.title}</p><p className="text-sm text-muted-foreground">{p.summary}</p></div><button className="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground">Approve</button><button className="rounded-md border px-3 py-2 text-sm font-semibold">Edit SEO</button></div>)}</div></AdminShell>; }

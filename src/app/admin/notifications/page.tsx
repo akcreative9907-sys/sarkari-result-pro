@@ -1,0 +1,2 @@
+﻿import { AdminShell } from "@/components/admin/admin-shell";
+export default function NotificationsPage() { return <AdminShell><h1 className="text-3xl font-bold">Notification Controls</h1><div className="mt-6 grid gap-4 md:grid-cols-4">{["Browser Push", "Email", "Telegram", "WhatsApp"].map((x) => <div key={x} className="glass rounded-lg p-5"><p className="font-semibold">{x}</p><p className="mt-2 text-sm text-muted-foreground">Enabled through environment-backed provider adapter.</p></div>)}</div></AdminShell>; }

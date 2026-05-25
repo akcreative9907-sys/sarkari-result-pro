@@ -1,0 +1,2 @@
+﻿import { AdminShell } from "@/components/admin/admin-shell";
+export default function SeoPage() { return <AdminShell><h1 className="text-3xl font-bold">SEO Management</h1><div className="glass mt-6 rounded-lg p-6"><p className="font-semibold">Dynamic metadata pipeline</p><p className="mt-3 text-sm leading-6 text-muted-foreground">Every post stores SEO title, meta description, slug, keywords, FAQ JSON, canonical URL, Open Graph, Twitter card data, and schema markup. Admins can regenerate AI metadata before publishing.</p></div></AdminShell>; }

@@ -1,0 +1,6 @@
+﻿import Link from "next/link";
+import { Bell, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/site/theme-toggle";
+const nav = [["Jobs", "/jobs"], ["Results", "/results"], ["Admit Cards", "/admit-cards"], ["Answer Keys", "/answer-keys"], ["Admissions", "/admissions"], ["Syllabus", "/syllabus"]];
+export function Header() { return <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl"><div className="container flex h-16 items-center justify-between gap-4"><Link href="/" className="flex items-center gap-2 font-bold"><span className="grid h-9 w-9 place-items-center rounded-md bg-primary text-primary-foreground"><ShieldCheck className="h-5 w-5" /></span><span>Sarkari Signal</span></Link><nav className="hidden items-center gap-5 text-sm text-muted-foreground lg:flex">{nav.map(([label, href]) => <Link key={href} className="hover:text-foreground" href={href}>{label}</Link>)}</nav><div className="flex items-center gap-2"><Button asChild variant="outline" className="hidden sm:inline-flex"><Link href="/search">Search</Link></Button><Button asChild size="icon" variant="ghost"><Link aria-label="Notifications" href="/admin/notifications"><Bell className="h-4 w-4" /></Link></Button><ThemeToggle /></div></div></header>; }

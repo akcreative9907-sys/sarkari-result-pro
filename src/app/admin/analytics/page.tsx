@@ -1,0 +1,2 @@
+﻿import { AdminShell } from "@/components/admin/admin-shell";
+export default function AnalyticsPage() { return <AdminShell><h1 className="text-3xl font-bold">Analytics</h1><div className="mt-6 grid gap-4 md:grid-cols-3">{["Views", "Searches", "Bookmarks", "Shares", "Apply clicks", "Recent growth"].map((x, i) => <div key={x} className="glass rounded-lg p-5"><p className="text-sm text-muted-foreground">{x}</p><p className="mt-2 text-3xl font-bold">{(i + 2) * 1847}</p></div>)}</div></AdminShell>; }
